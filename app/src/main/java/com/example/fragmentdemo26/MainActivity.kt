@@ -5,45 +5,44 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-
 
 class MainActivity : AppCompatActivity() {
     lateinit var fm: FragmentManager
-    lateinit var ft: FragmentTransaction
-    lateinit var fr1: Fragment
-    lateinit var fr2: Fragment
-    lateinit var toFinishTask: Button
-    lateinit var toCurrentTask: Button
+    lateinit var briefFragment: Fragment
+    lateinit var detailedFragment: Fragment
+    lateinit var toBrief: Button
+    lateinit var toDetailed: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         fm = supportFragmentManager
-        ft = fm.beginTransaction()
-        fr2 = FinishTaskFragment()
+        detailedFragment = DetailedWeatherFragment()
 
-        val fr = fm.findFragmentById(R.id.container_fragm)
-        if (fr == null) {
-            fr1 = CurrentTaskFragment()
-            fm.beginTransaction().add(R.id.container_fragm, fr1)
+        val existing = fm.findFragmentById(R.id.container_fragm)
+        if (existing == null) {
+            briefFragment = BriefWeatherFragment()
+            fm.beginTransaction()
+                .add(R.id.container_fragm, briefFragment)
                 .commit()
-        } else
-            fr1 = fr
+        } else {
+            briefFragment = existing
+        }
 
-        toCurrentTask = findViewById(R.id.currentTask)
-        toFinishTask = findViewById(R.id.finishTask)
+        toBrief = findViewById(R.id.btnBrief)
+        toDetailed = findViewById(R.id.btnDetailed)
 
-        toFinishTask.setOnClickListener {
+        toBrief.setOnClickListener {
+            fm.beginTransaction()
+                .replace(R.id.container_fragm, briefFragment)
+                .commit()
+        }
 
-            val ft = fm.beginTransaction()
-            ft.replace(R.id.container_fragm, fr2)
-            ft.commit() }
-
-        toCurrentTask.setOnClickListener {
-            val ft = fm.beginTransaction()
-            ft.replace(R.id.container_fragm, fr1)
-            ft.commit() }
+        toDetailed.setOnClickListener {
+            fm.beginTransaction()
+                .replace(R.id.container_fragm, detailedFragment)
+                .commit()
+        }
     }
-
 }

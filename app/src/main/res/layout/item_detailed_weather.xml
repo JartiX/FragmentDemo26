@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/ivDetailIcon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_sunny"
+            android:contentDescription="Погода" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/tvDetailDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Понедельник"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/tvDetailTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Температура: 22°C"
+                android:textSize="15sp"
+                android:textColor="#E65100"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/tvDetailDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Описание: Солнечно"
+                android:textSize="14sp"
+                android:textColor="#555555" />
+
+            <TextView
+                android:id="@+id/tvDetailHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Влажность: 40%"
+                android:textSize="13sp"
+                android:textColor="#777777" />
+
+            <TextView
+                android:id="@+id/tvDetailWind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ветер: 3.5 м/с, С"
+                android:textSize="13sp"
+                android:textColor="#777777" />
+
+            <TextView
+                android:id="@+id/tvDetailPressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Давление: 755 мм рт.ст."
+                android:textSize="13sp"
+                android:textColor="#777777" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="12dp"
+    android:layout_margin="4dp"
+    android:background="@drawable/bg_brief_card">
+
+    <TextView
+        android:id="@+id/tvBriefDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Пн"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#333333" />
+
+    <ImageView
+        android:id="@+id/ivWeatherIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:src="@drawable/ic_sunny"
+        android:contentDescription="Погода" />
+
+    <TextView
+        android:id="@+id/tvBriefTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22°C"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#1976D2" />
+
+</LinearLayout>
