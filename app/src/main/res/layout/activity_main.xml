@@ -2,32 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F5F5F5">
 
+    <!-- Заголовок с названием города -->
     <TextView
+        android:id="@+id/tvCityTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="🌤 Прогноз погоды"
-        android:textSize="24sp"
+        android:text="Погода: Москва"
+        android:textSize="22sp"
         android:textStyle="bold"
+        android:textColor="#1565C0"
         android:gravity="center"
-        android:padding="12dp"
-        android:background="#1976D2"
-        android:textColor="@android:color/white" />
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:background="#BBDEFB" />
 
+    <!-- Панель кнопок переключения вида -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="8dp">
 
         <Button
             android:id="@+id/btnBrief"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="☀ Кратко"
+            android:text="Кратко"
+            android:textSize="13sp"
             android:layout_marginEnd="4dp" />
 
         <Button
@@ -35,13 +41,45 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="📋 Подробно"
+            android:text="Подробно"
+            android:textSize="13sp"
             android:layout_marginStart="4dp" />
     </LinearLayout>
 
+    <!-- Панель кнопок диалогов -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/btnSelectCity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🏙  Город"
+            android:textSize="13sp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnSelectDesign"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🎨  Дизайн"
+            android:textSize="13sp"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+
+    <!-- Контейнер для фрагментов -->
     <FrameLayout
         android:id="@+id/container_fragm"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 </LinearLayout>
